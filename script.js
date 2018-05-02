@@ -124,14 +124,32 @@ function katas18(str) {
 }
 
 function katas19(str) {
-  appendH( "Find and display all cities from gotCitiesCSV  that use double vowel");
-  const arr = str.split(",");
-   result =  arr.filter((string)=>/([a-z])\1+/.test(string));
+  appendH(
+    "Find and display all cities from gotCitiesCSV  that use double vowel"
+  );
+//original method using includes function
+//   const arr = str.split(",");
+//   let arr2= [];
+//   for(string in arr){
+//       const i = arr[string]
+//       i.includes('aa') ? arr2.push(i)
+//       : i.includes('ee') ? arr2.push(i)
+//       : i.includes('ii') ? arr2.push(i)
+//       : i.includes('oo') ? arr2.push(i)
+//       : i.includes('uu') ? arr2.push(i) : null
+//   } appendArr(arr2);
+
+//regex method
+ const arr = str.split(",");
+  result = arr.filter(string => /([a-z])\1+/.test(string));
   appendArr(result);
+ 
 }
 
 function katas20(arr) {
-  appendH("Find and display all cities from lotrCitiesArray that end with 'or' ");
+  appendH(
+    "Find and display all cities from lotrCitiesArray that end with 'or' "
+  );
   const stringArr = [];
   for (s in arr) {
     arr[s].endsWith("or") ? stringArr.push(" " + arr[s]) : null;
@@ -161,12 +179,14 @@ function katas23(arr) {
 }
 function katas24(arr) {
   appendH(' Display the index of "Mirkwood" in lotrCitiesArray');
-  const r = arr.indexOf("Mirkwood")
+  const r = arr.indexOf("Mirkwood");
   appendArr(r);
 }
 function katas25(arr) {
-  appendH( "Find and display the first city in lotrCitiesArray that has more than one word");
-  const result = arr.find((n)=> n.includes(' '));
+  appendH(
+    "Find and display the first city in lotrCitiesArray that has more than one word"
+  );
+  const result = arr.find(n => n.includes(" "));
   appendStr(result);
 }
 function katas26(arr) {
@@ -181,24 +201,28 @@ function katas28(arr) {
   appendH(
     "Sort lotrCitiesArray by the number of characters in each city (i.e., shortest city names go first)"
   );
-  appendStr(arr.sort((a,b)=>a.length>b.length));
+  appendStr(arr.sort((a, b) => a.length > b.length));
 }
 function katas29and30(arr) {
   appendH("Using pop, remove the last city from lotrCitiesArray");
- const pop = arr.pop()
+  const pop = arr.pop();
   appendArr(arr);
 
-  appendH("Using push, add back the city from lotrCitiesArray that was removed in #29 to the back of the array");
-  arr.push(pop)
+  appendH(
+    "Using push, add back the city from lotrCitiesArray that was removed in #29 to the back of the array"
+  );
+  arr.push(pop);
   appendArr(arr);
 }
 function katas31and32(arr) {
   appendH("Using shift, remove the first city from lotrCitiesArray");
-  const s = arr.shift()
+  const s = arr.shift();
   appendArr(arr);
 
-  appendH(" Using unshift, add back the city from lotrCitiesArray that was removed in #31 to the front of the array");
-  arr.unshift(s)
+  appendH(
+    " Using unshift, add back the city from lotrCitiesArray that was removed in #31 to the front of the array"
+  );
+  arr.unshift(s);
   appendArr(arr);
 }
 
@@ -221,18 +245,17 @@ function runKatas() {
   katas16(bestThing);
   katas17(bestThing);
   katas18(bestThing);
-     katas19(gotCitiesCSV);
+  katas19(gotCitiesCSV);
   katas20(lotrCitiesArray);
   katas21(bestThing);
   katas22(lotrCitiesArray);
   katas23(lotrCitiesArray);
   katas24(lotrCitiesArray);
-    katas25(lotrCitiesArray);
-     katas26(lotrCitiesArray);
-    katas27(lotrCitiesArray);
-     katas28(lotrCitiesArray);
-    katas29and30(lotrCitiesArray);
-     katas31and32(lotrCitiesArray);
-
+  katas25(lotrCitiesArray);
+  katas26(lotrCitiesArray);
+  katas27(lotrCitiesArray);
+  katas28(lotrCitiesArray);
+  katas29and30(lotrCitiesArray);
+  katas31and32(lotrCitiesArray);
 }
 runKatas();
